@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Caderno de Arte · O Invisível do Cotidiano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#ex1">Pular para a jornada</a>
+
+  <!-- ===== TOPO ===== -->
+  <header class="topo">
+    <h1>📓 Caderno de Arte · Módulo 01</h1>
+    <p class="sub">O Invisível do Cotidiano · Jornada Criativa em Grupo</p>
+
+    <!-- Barra de progresso -->
+    <div class="progress-wrapper">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <span class="progress-fill" style="width:0%"></span>
+      </div>
+      <span class="progress-label"><span id="pct">0</span>% concluído</span>
+    </div>
+
+    <!-- Timer e horário final -->
+    <div class="timer-controls">
+      <div class="timer-display">
+        <span id="timerDisplay">50:00</span>
+      </div>
+      <div class="timer-inputs">
+        <label for="endTime">Fim da aula:</label>
+        <input type="time" id="endTime" value="14:30">
+        <button class="act" id="setTimerBtn">⏱️ Definir</button>
+        <button class="act" id="resetTimerBtn">🔄 Zerar</button>
+        <button class="act" id="pauseTimerBtn">⏸️ Pausar</button>
+      </div>
+    </div>
+
+    <!-- Navegação rápida -->
+    <nav aria-label="Etapas da jornada">
+      <ol id="sum"></ol>
+    </nav>
+  </header>
+
+  <main id="exs">
+    <!-- Triângulo do Criador -->
+    <section class="card" aria-labelledby="tri-tit">
+      <span class="tape"></span>
+      <span class="tape t2"></span>
+      <h2 id="tri-tit">🧠 O Triângulo do Criador</h2>
+      <p>Toda obra de arte começa com um olhar que ninguém mais teve. Em grupo, passem por estes três pilares:</p>
+      <div class="triwrap">
+        <svg class="tri" viewBox="0 0 360 320" role="img" aria-label="Triângulo do criador: olhar, criar, sentir">
+          <polygon points="180,20 340,300 20,300" fill="#fff9b1" stroke="#173fa6" stroke-width="3"/>
+          <text x="180" y="110" class="tt" text-anchor="middle">① OLHAR</text>
+          <text x="100" y="280" class="tt" text-anchor="middle">② CRIAR</text>
+          <text x="260" y="280" class="tt" text-anchor="middle">③ SENTIR</text>
+          <text x="180" y="180" class="tm" text-anchor="middle">👁</text>
+          <text x="80"  y="250" class="tm" text-anchor="middle">🎨</text>
+          <text x="280" y="250" class="tm" text-anchor="middle">❤️</text>
+        </svg>
+        <div>
+          <div class="postit">① OLHAR (Mente 👁) — Observe o invisível ao redor. Alimente a mente com matéria-prima.</div>
+          <div class="postit azul">② CRIAR (Mão 🎨) — Coloque no papel. A ideia só existe quando ganha forma.</div>
+          <div class="postit">③ SENTIR (Coração ❤️) — O que a obra diz sobre vocês? Valor emocional.</div>
+        </div>
+      </div>
+
+      <figure class="mapa-wrap">
+        <img src="mapamental.jpg" alt="Mapa mental da jornada criativa: Preparação, Incubação, Iluminação, Verificação, Exposição" id="mapa-img">
+        <figcaption>
+          Mapa Mental da Jornada · <button class="act" id="abrirMapa" aria-haspopup="dialog">🗺️ Tela cheia</button>
+        </figcaption>
+      </figure>
+
+      <p class="postit azul">🎨 "Aula dada é arte vivida HOJE!" — em grupo, criem sem medo.</p>
+    </section>
+
+    <!-- Os 8 desafios serão injetados via JS -->
+    <div id="desafiosContainer"></div>
+
+    <!-- Flashcards -->
+    <section class="card">
+      <span class="tape"></span>
+      <h2>🎴 Flashcards do Criador (clique para virar)</h2>
+      <div id="flashes"></div>
+      <p class="postit azul">📌 Lembrete final: <b>arte começa com um olhar.</b> Sem olhar novo, a obra não nasce!</p>
+    </section>
+  </main>
+
+  <!-- MODAL DO MAPA -->
+  <div class="modal" id="modalMapa" role="dialog" aria-modal="true" aria-label="Mapa mental em tela cheia" hidden>
+    <button class="modal-close" id="fecharMapa" aria-label="Fechar">✕</button>
+    <img src="mapamental.jpg" alt="Mapa mental em tela cheia">
+  </div>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="backToTop" aria-label="Voltar ao topo">⬆</button>
+
+  <footer>
+    <p>Baseado na Jornada Criativa em 50 minutos · Bom trabalho em grupo! 🎨</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
